@@ -4,12 +4,6 @@
 
 # Typora无限试用
 
-[![img](README.assets/webp-165380436478262.webp)](https://www.jianshu.com/u/084c7a37719c)
-
-[Ruining101](https://www.jianshu.com/u/084c7a37719c)关注
-
-2022.03.01 10:03:49字数 105阅读 1,292
-
 ## Typora好用，但是收费了，于是乎参考[吾爱破解](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.52pojie.cn%2Fthread-1553967-1-1.html)分享给大家
 
 ![img](README.assets/webp-165380436478263.webp)
@@ -95,6 +89,8 @@ npm install -g gitbook-cli
 ```
 
 如果提示npm不是内部会外部命令，可以cd到node.js的安装目录在执行或将npm的目录添加到系统变量path中。
+
+
 
 ## 编辑工具的安装
 
@@ -440,7 +436,7 @@ https://blog.csdn.net/weixin_42875245/article/details/108554926    （验证图�
 
 
 
-# git官网文档
+# gitbook官网文档
 
 https://docs.gitbook.com/integrations/git-sync/content-configuration
 

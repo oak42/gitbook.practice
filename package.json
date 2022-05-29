@@ -1,0 +1,19 @@
+{
+  "name": "gitbook.practice",
+  "version": "1.0.0",
+  "description": "![img](README.assets/webp-165380436478263.webp)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oak42/gitbook.practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oak42/gitbook.practice/issues"
+  },
+  "homepage": "https://github.com/oak42/gitbook.practice#readme"
+}
