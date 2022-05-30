@@ -1,3 +1,51 @@
 {
+  "plugins": [
+    "-lunr", "-search", "search-pro",
+    "chapter-fold",
+    "expandable-chapters",
+    "code",
+    "todo",
+    "splitter",
+    "page-treeview",
+    "edit-link",
+    "lightbox",
+    "hide-element",
+    "theme-fexa"
 
+  ],
+  "pluginsConfig": {
+    "code": {
+      "copyButtons": true
+    },
+
+    "page-treeview": {
+      "copyright": "Copyright &#169; ackerley42",
+      "minHeaderCount": "2",
+      "minHeaderDeep": "2"
+    },
+    "edit-link": {
+      "base": "https://github.com/oak42/gitbook.practice/edit/main",
+      "label": "Edit This Page !!!~~~"
+    },
+    "hide-element": {
+      "elements": [".gitbook-link"]
+    },
+    "variables": {
+      "themeFexa":{
+        "nav":[
+          {
+            "url":"http://...",
+            "target":"_blank",
+            "name": "简易教程"
+          }
+        ]
+      }
+    },
+    "pluginsConfig": {
+      "theme-fexa":{
+        "logo":"./logo.png",
+        "favicon": "./favicon.ico"
+      }
+    }
+  }
 }
