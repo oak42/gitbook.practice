@@ -1,12 +1,12 @@
 {
   "plugins": [
-    "-lunr", "-search", "search-pro",
+    "-lunr", "-search", "search-pro-ling",
     "chapter-fold",
     "expandable-chapters",
     "code",
     "todo",
     "splitter",
-    "page-treeview",
+    "intopic-toc",
     "edit-link",
     "lightbox",
     "hide-element",
@@ -18,10 +18,8 @@
       "copyButtons": true
     },
 
-    "page-treeview": {
-      "copyright": "Copyright &#169; ackerley42",
-      "minHeaderCount": "2",
-      "minHeaderDeep": "2"
+    "intopic-toc": {
+      "label": "In this article"
     },
     "edit-link": {
       "base": "https://github.com/oak42/gitbook.practice/edit/main",
