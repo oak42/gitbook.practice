@@ -9,8 +9,7 @@
     "intopic-toc",
     "edit-link",
     "lightbox",
-    "hide-element",
-    "theme-fexa"
+    "hide-element"
 
   ],
   "pluginsConfig": {
@@ -37,12 +36,6 @@
             "name": "简易教程"
           }
         ]
-      }
-    },
-    "pluginsConfig": {
-      "theme-fexa":{
-        "logo":"./logo.png",
-        "favicon": "./favicon.ico"
       }
     }
   }
