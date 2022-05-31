@@ -9,7 +9,8 @@
     "intopic-toc",
     "edit-link",
     "lightbox",
-    "hide-element"
+    "hide-element",
+    "bottom-navigation"
 
   ],
   "pluginsConfig": {
@@ -27,16 +28,10 @@
     "hide-element": {
       "elements": [".gitbook-link"]
     },
-    "variables": {
-      "themeFexa":{
-        "nav":[
-          {
-            "url":"http://...",
-            "target":"_blank",
-            "name": "简易教程"
-          }
-        ]
-      }
+    "bottom-navigation": {
+      "iconColor": "darkgrey",
+      "titleColor": "black",
+      "borderColor": "transparent"
     }
   }
 }
