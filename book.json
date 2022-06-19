@@ -4,6 +4,7 @@
     "chapter-fold",
     "expandable-chapters",
     "code",
+    "emphasize",
     "todo",
     "splitter",
     "intopic-toc",
@@ -23,7 +24,7 @@
     },
     "edit-link": {
       "base": "https://github.com/oak42/gitbook.practice/edit/main",
-      "label": "Edit This Page !!!~~~"
+      "label": "Edit This Page"
     },
     "hide-element": {
       "elements": [".gitbook-link"]

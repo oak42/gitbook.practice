@@ -2,7 +2,7 @@
 
 # gitbook.practice.provisioning
 
-
+# typora  Markdown Reference(https://support.typora.io/Markdown-Reference/)
 
 # Typora无限试用
 
@@ -442,4 +442,5 @@ https://blog.csdn.net/weixin_42875245/article/details/108554926    （验证图�
 
 https://docs.gitbook.com/integrations/git-sync/content-configuration
 
-
+gitbook config ( {% em type="green" %}book.json{% endem %} (powered by the 'emphasize' plugin)] doc:
+https://github.com/GitbookIO/gitbook/blob/master/docs/config.md

@@ -19,6 +19,7 @@
   "dependencies": {
     "gitbook-plugin-chapter-fold": "0.0.4",
     "gitbook-plugin-code": "0.1.0",
+    "gitbook-plugin-emphasize": "1.1.0",
     "gitbook-plugin-edit-link": "2.0.2",
     "gitbook-plugin-expandable-chapters": "0.2.0",
     "gitbook-plugin-hide-element": "0.0.4",
