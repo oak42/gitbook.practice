@@ -1,0 +1,915 @@
+{
+  "Dedication": {},
+  "Foreword": {},
+  "Preface": {
+    "Administrative Notes": {},
+    "What’s New in the Fourth Edition?": {},
+    "What’s New in the Third Edition?": {},
+    "What’s New in the Second Edition?": {},
+    "Conventions Used in This Book": {},
+    "Using Code Examples": {},
+    "Safari® Books Online": {},
+    "How to Contact Us": {},
+    "Acknowledgments": {}
+  },
+  "I. Hadoop Fundamentals": {                   // 🌐 core Hadoop 1/3. | cover the fundamental components in Hadoop and should be read before tackling later chapters.
+    "1. Meet Hadoop": {                         // 🌐 a high-level introduction to Hadoop.
+      "Data!": {},
+      "Data Storage and Analysis": {},
+      "Querying All Your Data": {},
+      "Beyond Batch": {},
+      "Comparison with Other Systems": {
+        "Relational Database Management Systems": {},
+        "Grid Computing": {},
+        "Volunteer Computing": {}
+      },
+      "A Brief History of Apache Hadoop": {},
+      "What’s in This Book?": {}
+    },
+    "2. MapReduce": {                           // 🌐 an introduction to MapReduce.
+      "A Weather Dataset": {
+        "Data Format": {}
+      },
+      "Analyzing the Data with Unix Tools": {},
+      "Analyzing the Data with Hadoop": {
+        "Map and Reduce": {},
+        "Java MapReduce": {
+          "A test run": {}
+        }
+      },
+      "Scaling Out": {
+        "Data Flow": {},
+        "Combiner Functions": {
+          "Specifying a combiner function": {}
+        },
+        "Running a Distributed MapReduce Job": {}
+      },
+      "Hadoop Streaming": {
+        "Ruby": {},
+        "Python": {}
+      }
+    },
+    "3. The Hadoop Distributed Filesystem": {   // 🌐 looks at Hadoop filesystems, and in particular HDFS, in depth.
+      "The Design of HDFS": {},
+      "HDFS Concepts": {
+        "Blocks": {},
+        "Namenodes and Datanodes": {},
+        "Block Caching": {},
+        "HDFS Federation": {},
+        "HDFS High Availability": {
+          "Failover and fencing": {}
+        }
+      },
+      "The Command-Line Interface": {
+        "Basic Filesystem Operations": {}
+      },
+      "Hadoop Filesystems": {
+        "Interfaces": {
+          "HTTP": {},
+          "C": {},
+          "NFS": {},
+          "FUSE": {}
+        }
+      },
+      "The Java Interface": {
+        "Reading Data from a Hadoop URL": {},
+        "Reading Data Using the FileSystem API": {
+          "FSDataInputStream": {}
+        },
+        "Writing Data": {
+          "FSDataOutputStream": {}
+        },
+        "Directories": {},
+        "Querying the Filesystem": {
+          "File metadata: FileStatus": {},
+          "Listing files": {},
+          "File patterns": {},
+          "PathFilter": {}
+        },
+        "Deleting Data": {}
+      },
+      "Data Flow": {
+        "Anatomy of a File Read": {},
+        "Anatomy of a File Write": {},
+        "Coherency Model": {
+          "Consequences for application design": {}
+        }
+      },
+      "Parallel Copying with distcp": {
+        "Keeping an HDFS Cluster Balanced": {}
+      }
+    },
+    "4. YARN": {                                // 🌐 YARN, Hadoop’s cluster resource management system.
+      "Anatomy of a YARN Application Run": {
+        "Resource Requests": {},
+        "Application Lifespan": {},
+        "Building YARN Applications": {}
+      },
+      "YARN Compared to MapReduce 1": {},
+      "Scheduling in YARN": {
+        "Scheduler Options": {},
+        "Capacity Scheduler Configuration": {
+          "Queue placement": {}
+        },
+        "Fair Scheduler Configuration": {
+          "Enabling the Fair Scheduler": {},
+          "Queue configuration": {},
+          "Queue placement": {},
+          "Preemption": {}
+        },
+        "Delay Scheduling": {},
+        "Dominant Resource Fairness": {}
+      },
+      "Further Reading": {}
+    },
+    "5. Hadoop I/O": {                          // 🌐 the I/O building blocks in Hadoop: data integrity, compression, serialization, and file-based data structures.
+      "Data Integrity": {
+        "Data Integrity in HDFS": {},
+        "LocalFileSystem": {},
+        "ChecksumFileSystem": {}
+      },
+      "Compression": {
+        "Codecs": {
+          "Compressing and decompressing streams with         CompressionCodec": {},
+          "Inferring CompressionCodecs using         CompressionCodecFactory": {},
+          "Native libraries": {
+            "CodecPool": {}
+          }
+        },
+        "Compression and Input Splits": {},
+        "Using Compression in MapReduce": {
+          "Compressing map output": {}
+        }
+      },
+      "Serialization": {
+        "The Writable Interface": {
+          "WritableComparable and comparators": {}
+        },
+        "Writable Classes": {
+          "Writable wrappers for Java primitives": {},
+          "Text": {
+            "Indexing": {},
+            "Unicode": {},
+            "Iteration": {},
+            "Mutability": {},
+            "Resorting to String": {}
+          },
+          "BytesWritable": {},
+          "NullWritable": {},
+          "ObjectWritable and GenericWritable": {},
+          "Writable collections": {}
+        },
+        "Implementing a Custom Writable": {
+          "Implementing a RawComparator for speed": {},
+          "Custom comparators": {}
+        },
+        "Serialization Frameworks": {
+          "Serialization IDL": {}
+        }
+      },
+      "File-Based Data Structures": {
+        "SequenceFile": {
+          "Writing a SequenceFile": {},
+          "Reading a SequenceFile": {},
+          "Displaying a SequenceFile with the command-line         interface": {},
+          "Sorting and merging SequenceFiles": {},
+          "The SequenceFile format": {}
+        },
+        "MapFile": {
+          "MapFile variants": {}
+        },
+        "Other File Formats and Column-Oriented Formats": {}
+      }
+    }
+  },
+  "II. MapReduce": {                            // 🌐 core Hadoop 2/3. | cover MapReduce in depth.
+                                                //                        provide useful understanding for later chapters (such as the data processing chapters in Part IV),
+                                                //                        but could be skipped on a first reading.
+    "6. Developing a MapReduce Application": {  // 🌐 the practical steps needed to develop a MapReduce application.
+      "The Configuration API": {
+        "Combining Resources": {},
+        "Variable Expansion": {}
+      },
+      "Setting Up the Development Environment": {
+        "Managing Configuration": {},
+        "GenericOptionsParser, Tool, and ToolRunner": {}
+      },
+      "Writing a Unit Test with MRUnit": {
+        "Mapper": {},
+        "Reducer": {}
+      },
+      "Running Locally on Test Data": {
+        "Running a Job in a Local Job Runner": {},
+        "Testing the Driver": {}
+      },
+      "Running on a Cluster": {
+        "Packaging a Job": {
+          "The client classpath": {},
+          "The task classpath": {},
+          "Packaging dependencies": {},
+          "Task classpath precedence": {}
+        },
+        "Launching a Job": {},
+        "The MapReduce Web UI": {
+          "The resource manager page": {},
+          "The MapReduce job page": {}
+        },
+        "Retrieving the Results": {},
+        "Debugging a Job": {
+          "The tasks and task attempts pages": {},
+          "Handling malformed data": {}
+        },
+        "Hadoop Logs": {},
+        "Remote Debugging": {}
+      },
+      "Tuning a Job": {
+        "Profiling Tasks": {
+          "The HPROF profiler": {}
+        }
+      },
+      "MapReduce Workflows": {
+        "Decomposing a Problem into MapReduce Jobs": {},
+        "JobControl": {},
+        "Apache Oozie": {
+          "Defining an Oozie workflow": {},
+          "Packaging and deploying an Oozie workflow application": {},
+          "Running an Oozie workflow job": {}
+        }
+      }
+    },
+    "7. How MapReduce Works": {                 // 🌐 how MapReduce is implemented in Hadoop, from the point of view of a user.
+      "Anatomy of a MapReduce Job Run": {
+        "Job Submission": {},
+        "Job Initialization": {},
+        "Task Assignment": {},
+        "Task Execution": {
+          "Streaming": {}
+        },
+        "Progress and Status Updates": {},
+        "Job Completion": {}
+      },
+      "Failures": {
+        "Task Failure": {},
+        "Application Master Failure": {},
+        "Node Manager Failure": {},
+        "Resource Manager Failure": {}
+      },
+      "Shuffle and Sort": {
+        "The Map Side": {},
+        "The Reduce Side": {},
+        "Configuration Tuning": {}
+      },
+      "Task Execution": {
+        "The Task Execution Environment": {
+          "Streaming environment variables": {}
+        },
+        "Speculative Execution": {},
+        "Output Committers": {
+          "Task side-effect files": {}
+        }
+      }
+    },
+    "8. MapReduce Types and Formats": {         // 🌐 the MapReduce programming model and the various data formats that MapReduce can work with.
+      "MapReduce Types": {
+        "The Default MapReduce Job": {
+          "The default Streaming job": {},
+          "Keys and values in Streaming": {}
+        }
+      },
+      "Input Formats": {
+        "Input Splits and Records": {
+          "FileInputFormat": {},
+          "FileInputFormat input paths": {},
+          "FileInputFormat input splits": {},
+          "Small files and CombineFileInputFormat": {},
+          "Preventing splitting": {},
+          "File information in the mapper": {},
+          "Processing a whole file as a record": {}
+        },
+        "Text Input": {
+          "TextInputFormat": {
+            "Controlling the maximum line length": {}
+          },
+          "KeyValueTextInputFormat": {},
+          "NLineInputFormat": {},
+          "XML": {}
+        },
+        "Binary Input": {
+          "SequenceFileInputFormat": {},
+          "SequenceFileAsTextInputFormat": {},
+          "SequenceFileAsBinaryInputFormat": {},
+          "FixedLengthInputFormat": {}
+        },
+        "Multiple Inputs": {},
+        "Database Input (and Output)": {}
+      },
+      "Output Formats": {
+        "Text Output": {},
+        "Binary Output": {
+          "SequenceFileOutputFormat": {},
+          "SequenceFileAsBinaryOutputFormat": {},
+          "MapFileOutputFormat": {}
+        },
+        "Multiple Outputs": {
+          "An example: Partitioning data": {},
+          "MultipleOutputs": {}
+        },
+        "Lazy Output": {},
+        "Database Output": {}
+      }
+    },
+    "9. MapReduce Features": {                  // 🌐 advanced MapReduce topics, including sorting and joining data.
+      "Counters": {
+        "Built-in Counters": {
+          "Task counters": {},
+          "Job counters": {}
+        },
+        "User-Defined Java Counters": {
+          "Dynamic counters": {},
+          "Retrieving counters": {}
+        },
+        "User-Defined Streaming Counters": {}
+      },
+      "Sorting": {
+        "Preparation": {},
+        "Partial Sort": {},
+        "Total Sort": {},
+        "Secondary Sort": {
+          "Java code": {},
+          "Streaming": {}
+        }
+      },
+      "Joins": {
+        "Map-Side Joins": {},
+        "Reduce-Side Joins": {}
+      },
+      "Side Data Distribution": {
+        "Using the Job Configuration": {},
+        "Distributed Cache": {
+          "Usage": {},
+          "How it works": {},
+          "The distributed cache API": {}
+        }
+      },
+      "MapReduce Library Classes": {}
+    }
+  },
+  "III. Hadoop Operations": {                   // 🌐 core Hadoop 3/3. | the administration of Hadoop.
+    "10. Setting Up a Hadoop Cluster": {        // 🌐 how to set up and maintain a Hadoop cluster running HDFS and MapReduce on YARN | 1/2.
+      "Cluster Specification": {
+        "Cluster Sizing": {
+          "Master node scenarios": {}
+        },
+        "Network Topology": {
+          "Rack awareness": {}
+        }
+      },
+      "Cluster Setup and Installation": {
+        "Installing Java": {},
+        "Creating Unix User Accounts": {},
+        "Installing Hadoop": {},
+        "Configuring SSH": {},
+        "Configuring Hadoop": {},
+        "Formatting the HDFS Filesystem": {},
+        "Starting and Stopping the Daemons": {},
+        "Creating User Directories": {}
+      },
+      "Hadoop Configuration": {
+        "Configuration Management": {},
+        "Environment Settings": {
+          "Java": {},
+          "Memory heap size": {},
+          "System logfiles": {},
+          "SSH settings": {}
+        },
+        "Important Hadoop Daemon Properties": {
+          "HDFS": {},
+          "YARN": {},
+          "Memory settings in YARN and MapReduce": {},
+          "CPU settings in YARN and MapReduce": {}
+        },
+        "Hadoop Daemon Addresses and Ports": {},
+        "Other Hadoop Properties": {
+          "Cluster membership": {},
+          "Buffer size": {},
+          "HDFS block size": {},
+          "Reserved storage space": {},
+          "Trash": {},
+          "Job scheduler": {},
+          "Reduce slow start": {},
+          "Short-circuit local reads": {}
+        }
+      },
+      "Security": {
+        "Kerberos and Hadoop": {
+          "An example": {}
+        },
+        "Delegation Tokens": {},
+        "Other Security Enhancements": {}
+      },
+      "Benchmarking a Hadoop Cluster": {
+        "Hadoop Benchmarks": {
+          "Benchmarking MapReduce with TeraSort": {},
+          "Other benchmarks": {}
+        },
+        "User Jobs": {}
+      }
+    },
+    "11. Administering Hadoop": {               // 🌐 how to set up and maintain a Hadoop cluster running HDFS and MapReduce on YARN | 2/2.
+      "HDFS": {
+        "Persistent Data Structures": {
+          "Namenode directory structure": {},
+          "The filesystem image and edit log": {},
+          "Secondary namenode directory structure": {},
+          "Datanode directory structure": {}
+        },
+        "Safe Mode": {
+          "Entering and leaving safe mode": {}
+        },
+        "Audit Logging": {},
+        "Tools": {
+          "dfsadmin": {},
+          "Filesystem check (fsck)": {
+            "Finding the blocks for a file": {}
+          },
+          "Datanode block scanner": {},
+          "Balancer": {}
+        }
+      },
+      "Monitoring": {
+        "Logging": {
+          "Setting log levels": {},
+          "Getting stack traces": {}
+        },
+        "Metrics and JMX": {}
+      },
+      "Maintenance": {
+        "Routine Administration Procedures": {
+          "Metadata backups": {},
+          "Data backups": {},
+          "Filesystem check (fsck)": {},
+          "Filesystem balancer": {}
+        },
+        "Commissioning and Decommissioning Nodes": {
+          "Commissioning new nodes": {},
+          "Decommissioning old nodes": {}
+        },
+        "Upgrades": {
+          "HDFS data and metadata upgrades": {
+            "Start the upgrade": {},
+            "Wait until the upgrade is complete": {},
+            "Check the upgrade": {},
+            "Roll back the upgrade (optional)": {},
+            "Finalize the upgrade (optional)": {}
+          }
+        }
+      }
+    }
+  },
+  "IV. Related Projects": {                     // 🌐 Part IV covers related projects in the Hadoop ecosystem.   projects that build on Hadoop or are closely related to it.
+                                                // Each chapter covers one project and is largely independent of the other chapters in this part, so they can be read in any order.
+    "12. Avro": {                               // 🌐 data formats 1/2. | Avro, a cross-language data serialization library for Hadoop
+      "Avro Data Types and Schemas": {},
+      "In-Memory Serialization and Deserialization": {
+        "The Specific API": {}
+      },
+      "Avro Datafiles": {},
+      "Interoperability": {
+        "Python API": {},
+        "Avro Tools": {}
+      },
+      "Schema Resolution": {},
+      "Sort Order": {},
+      "Avro MapReduce": {},
+      "Sorting Using Avro MapReduce": {},
+      "Avro in Other Languages": {}
+    },
+    "13. Parquet": {                            // 🌐 data formats 2/2. | Parquet, an efficient columnar storage format for nested data.
+      "Data Model": {
+        "Nested Encoding": {}
+      },
+      "Parquet File Format": {},
+      "Parquet Configuration": {},
+      "Writing and Reading Parquet Files": {
+        "Avro, Protocol Buffers, and Thrift": {
+          "Projection and read schemas": {}
+        }
+      },
+      "Parquet MapReduce": {}
+    },
+    "14. Flume": {                              // 🌐 data ingestion, or how to get your data into Hadoop 1/2. | Flume, for high-volume ingestion of streaming data.
+      "Installing Flume": {},
+      "An Example": {},
+      "Transactions and Reliability": {
+        "Batching": {}
+      },
+      "The HDFS Sink": {
+        "Partitioning and Interceptors": {},
+        "File Formats": {}
+      },
+      "Fan Out": {
+        "Delivery Guarantees": {},
+        "Replicating and Multiplexing Selectors": {}
+      },
+      "Distribution: Agent Tiers": {
+        "Delivery Guarantees": {}
+      },
+      "Sink Groups": {},
+      "Integrating Flume with Applications": {},
+      "Component Catalog": {},
+      "Further Reading": {}
+    },
+    "15. Sqoop": {                              // 🌐 data ingestion, or how to get your data into Hadoop 1/2. | Sqoop, for efficient bulk transfer of data between structured data stores (like relational databases) and HDFS.
+      "Getting Sqoop": {},
+      "Sqoop Connectors": {},
+      "A Sample Import": {
+        "Text and Binary File Formats": {}
+      },
+      "Generated Code": {
+        "Additional Serialization Systems": {}
+      },
+      "Imports: A Deeper Look": {
+        "Controlling the Import": {},
+        "Imports and Consistency": {},
+        "Incremental Imports": {},
+        "Direct-Mode Imports": {}
+      },
+      "Working with Imported Data": {
+        "Imported Data and Hive": {}
+      },
+      "Importing Large Objects": {},
+      "Performing an Export": {},
+      "Exports: A Deeper Look": {
+        "Exports and Transactionality": {},
+        "Exports and SequenceFiles": {}
+      },
+      "Further Reading": {}
+    },
+    "16. Pig": {                                // 🌐 data processing, in particular using higher-level abstractions than MapReduce 1/4. | Pig, a data flow language for exploring very large datasets.
+      "Installing and Running Pig": {
+        "Execution Types": {
+          "Local mode": {},
+          "MapReduce mode": {}
+        },
+        "Running Pig Programs": {},
+        "Grunt": {},
+        "Pig Latin Editors": {}
+      },
+      "An Example": {
+        "Generating Examples": {}
+      },
+      "Comparison with Databases": {},
+      "Pig Latin": {
+        "Structure": {},
+        "Statements": {},
+        "Expressions": {},
+        "Types": {},
+        "Schemas": {
+          "Using Hive tables with HCatalog": {},
+          "Validation and nulls": {},
+          "Schema merging": {}
+        },
+        "Functions": {
+          "Other libraries": {}
+        },
+        "Macros": {}
+      },
+      "User-Defined Functions": {
+        "A Filter UDF": {
+          "Leveraging types": {}
+        },
+        "An Eval UDF": {
+          "Dynamic invokers": {}
+        },
+        "A Load UDF": {
+          "Using a schema": {}
+        }
+      },
+      "Data Processing Operators": {
+        "Loading and Storing Data": {},
+        "Filtering Data": {
+          "FOREACH...GENERATE": {},
+          "STREAM": {}
+        },
+        "Grouping and Joining Data": {
+          "JOIN": {},
+          "COGROUP": {},
+          "CROSS": {},
+          "GROUP": {}
+        },
+        "Sorting Data": {},
+        "Combining and Splitting Data": {}
+      },
+      "Pig in Practice": {
+        "Parallelism": {},
+        "Anonymous Relations": {},
+        "Parameter Substitution": {
+          "Dynamic parameters": {},
+          "Parameter substitution processing": {}
+        }
+      },
+      "Further Reading": {}
+    },
+    "17. Hive": {                               // 🌐 data processing, in particular using higher-level abstractions than MapReduce 2/4. | Hive, a data warehouse for managing data stored in HDFS and provides a query language based on SQL.
+      "Installing Hive": {
+        "The Hive Shell": {}
+      },
+      "An Example": {},
+      "Running Hive": {
+        "Configuring Hive": {
+          "Execution engines": {},
+          "Logging": {}
+        },
+        "Hive Services": {
+          "Hive clients": {}
+        },
+        "The Metastore": {}
+      },
+      "Comparison with Traditional Databases": {
+        "Schema on Read Versus Schema on Write": {},
+        "Updates, Transactions, and Indexes": {},
+        "SQL-on-Hadoop Alternatives": {}
+      },
+      "HiveQL": {
+        "Data Types": {
+          "Primitive types": {},
+          "Complex types": {}
+        },
+        "Operators and Functions": {
+          "Conversions": {}
+        }
+      },
+      "Tables": {
+        "Managed Tables and External Tables": {},
+        "Partitions and Buckets": {
+          "Partitions": {},
+          "Buckets": {}
+        },
+        "Storage Formats": {
+          "The default storage format: Delimited text": {},
+          "Binary storage formats: Sequence files, Avro datafiles, Parquet         files, RCFiles, and ORCFiles": {},
+          "Using a custom SerDe: RegexSerDe": {},
+          "Storage handlers": {}
+        },
+        "Importing Data": {
+          "Inserts": {},
+          "Multitable insert": {},
+          "CREATE TABLE...AS SELECT": {}
+        },
+        "Altering Tables": {},
+        "Dropping Tables": {}
+      },
+      "Querying Data": {
+        "Sorting and Aggregating": {},
+        "MapReduce Scripts": {},
+        "Joins": {
+          "Inner joins": {},
+          "Outer joins": {},
+          "Semi joins": {},
+          "Map joins": {}
+        },
+        "Subqueries": {},
+        "Views": {}
+      },
+      "User-Defined Functions": {
+        "Writing a UDF": {},
+        "Writing a UDAF": {
+          "A more complex UDAF": {}
+        }
+      },
+      "Further Reading": {}
+    },
+    "18. Crunch": {                             // 🌐 data processing, in particular using higher-level abstractions than MapReduce 3/4. | Crunch, a high-level Java API for writing data processing pipelines that can run on MapReduce or Spark.
+      "An Example": {},
+      "The Core Crunch API": {
+        "Primitive Operations": {
+          "union()": {},
+          "parallelDo()": {},
+          "groupByKey()": {},
+          "combineValues()": {}
+        },
+        "Types": {
+          "Records and tuples": {}
+        },
+        "Sources and Targets": {
+          "Reading from a source": {},
+          "Writing to a target": {},
+          "Existing outputs": {},
+          "Combined sources and targets": {}
+        },
+        "Functions": {
+          "Serialization of functions": {},
+          "Object reuse": {}
+        },
+        "Materialization": {
+          "PObject": {}
+        }
+      },
+      "Pipeline Execution": {
+        "Running a Pipeline": {
+          "Asynchronous execution": {},
+          "Debugging": {}
+        },
+        "Stopping a Pipeline": {},
+        "Inspecting a Crunch Plan": {},
+        "Iterative Algorithms": {},
+        "Checkpointing a Pipeline": {}
+      },
+      "Crunch Libraries": {},
+      "Further Reading": {}
+    },
+    "19. Spark": {                              // 🌐 data processing, in particular using higher-level abstractions than MapReduce 4/4. | Spark, a cluster computing framework for large-scale data processing; it provides a directed acyclic graph (DAG) engine, and APIs in Scala, Java, and Python.
+      "Installing Spark": {},
+      "An Example": {
+        "Spark Applications, Jobs, Stages, and Tasks": {},
+        "A Scala Standalone Application": {},
+        "A Java Example": {},
+        "A Python Example": {}
+      },
+      "Resilient Distributed Datasets": {
+        "Creation": {},
+        "Transformations and Actions": {
+          "Aggregation transformations": {}
+        },
+        "Persistence": {
+          "Persistence levels": {}
+        },
+        "Serialization": {
+          "Data": {},
+          "Functions": {}
+        }
+      },
+      "Shared Variables": {
+        "Broadcast Variables": {},
+        "Accumulators": {}
+      },
+      "Anatomy of a Spark Job Run": {
+        "Job Submission": {},
+        "DAG Construction": {},
+        "Task Scheduling": {},
+        "Task Execution": {}
+      },
+      "Executors and Cluster Managers": {
+        "Spark on YARN": {
+          "YARN client mode": {},
+          "YARN cluster mode": {}
+        }
+      },
+      "Further Reading": {}
+    },
+    "20. HBase": {                              // 🌐 an introduction to HBase, a distributed column-oriented real-time database that uses HDFS for its underlying storage.
+      "HBasics": {
+        "Backdrop": {}
+      },
+      "Concepts": {
+        "Whirlwind Tour of the Data Model": {
+          "Regions": {},
+          "Locking": {}
+        },
+        "Implementation": {
+          "HBase in operation": {}
+        }
+      },
+      "Installation": {
+        "Test Drive": {}
+      },
+      "Clients": {
+        "Java": {},
+        "MapReduce": {},
+        "REST and Thrift": {}
+      },
+      "Building an Online Query Application": {
+        "Schema Design": {},
+        "Loading Data": {
+          "Load distribution": {},
+          "Bulk load": {}
+        },
+        "Online Queries": {
+          "Station queries": {},
+          "Observation queries": {}
+        }
+      },
+      "HBase Versus RDBMS": {
+        "Successful Service": {},
+        "HBase": {}
+      },
+      "Praxis": {
+        "HDFS": {},
+        "UI": {},
+        "Metrics": {},
+        "Counters": {}
+      },
+      "Further Reading": {}
+    },
+    "21. ZooKeeper": {                          // 🌐 an introduction to ZooKeeper, a distributed, highly available coordination service that provides useful primitives for building distributed applications.
+      "Installing and Running ZooKeeper": {},
+      "An Example": {
+        "Group Membership in ZooKeeper": {},
+        "Creating the Group": {},
+        "Joining a Group": {},
+        "Listing Members in a Group": {
+          "ZooKeeper command-line tools": {}
+        },
+        "Deleting a Group": {}
+      },
+      "The ZooKeeper Service": {
+        "Data Model": {
+          "Ephemeral znodes": {},
+          "Sequence numbers": {},
+          "Watches": {}
+        },
+        "Operations": {
+          "Multiupdate": {},
+          "APIs": {},
+          "Watch triggers": {},
+          "ACLs": {}
+        },
+        "Implementation": {},
+        "Consistency": {},
+        "Sessions": {
+          "Time": {}
+        },
+        "States": {}
+      },
+      "Building Applications with ZooKeeper": {
+        "A Configuration Service": {},
+        "The Resilient ZooKeeper Application": {
+          "InterruptedException": {},
+          "KeeperException": {
+            "State exceptions": {},
+            "Recoverable exceptions": {},
+            "Unrecoverable exceptions": {}
+          },
+          "A reliable configuration service": {}
+        },
+        "A Lock Service": {
+          "The herd effect": {},
+          "Recoverable exceptions": {},
+          "Unrecoverable exceptions": {},
+          "Implementation": {}
+        },
+        "More Distributed Data Structures and Protocols": {
+          "BookKeeper and Hedwig": {}
+        }
+      },
+      "ZooKeeper in Production": {
+        "Resilience and Performance": {},
+        "Configuration": {}
+      },
+      "Further Reading": {}
+    }
+  },
+  "V. Case Studies": {                          // 🌐 Part V contains Hadoop case studies.
+    "22. Composable Data at Cerner": {          // 🌐 
+      "From CPUs to Semantic Integration": {},
+      "Enter Apache Crunch": {},
+      "Building a Complete Picture": {},
+      "Integrating Healthcare Data": {},
+      "Composability over Frameworks": {},
+      "Moving Forward": {}
+    },
+    "23. Biological Data Science: Saving Lives with Software": {// 🌐 
+      "The Structure of DNA": {},
+      "The Genetic Code: Turning DNA Letters into Proteins": {},
+      "Thinking of DNA as Source Code": {},
+      "The Human Genome Project and Reference Genomes": {},
+      "Sequencing and Aligning DNA": {},
+      "ADAM, A Scalable Genome Analysis Platform": {
+        "Literate programming with the Avro interface description language (IDL)": {},
+        "Column-oriented access with Parquet": {},
+        "A simple example: k-mer counting using         Spark and ADAM": {}
+      },
+      "From Personalized Ads to Personalized Medicine": {},
+      "Join In": {}
+    },
+    "24. Cascading": {                          // 🌐 
+      "Fields, Tuples, and Pipes": {},
+      "Operations": {},
+      "Taps, Schemes, and Flows": {},
+      "Cascading in Practice": {},
+      "Flexibility": {},
+      "Hadoop and Cascading at ShareThis": {},
+      "Summary": {}
+    }
+  },
+  "A. Installing Apache Hadoop": {
+    "Prerequisites": {},
+    "Installation": {},
+    "Configuration": {
+      "Standalone Mode": {},
+      "Pseudodistributed Mode": {
+        "Configuring SSH": {},
+        "Formatting the HDFS filesystem": {},
+        "Starting and stopping the daemons": {},
+        "Creating a user directory": {}
+      },
+      "Fully Distributed Mode": {}
+    }
+  },
+  "B. Cloudera’s Distribution Including Apache Hadoop": {},
+  "C. Preparing the NCDC Weather Data": {},
+  "D. The Old and New Java MapReduce APIs": {},
+  "Index": {},
+  "Colophon": {},
+  "Copyright": {}
+}

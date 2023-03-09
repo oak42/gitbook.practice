@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">3f735938-7045-4a52-93ba-e9dd169a2e29</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3f735938-7045-4a52-93ba-e9dd169a2e29</dc:identifier>
+        <dc:title>Hadoop</dc:title>
+        <dc:creator opf:file-as="White, Tom" opf:role="aut">Tom White</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (5.29.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-07-15T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Get ready to unlock the power of your data. With the fourth edition of this comprehensive guide, you'll learn how to build and maintain reliable, scalable, distributed systems with Apache Hadoop. This book is ideal for programmers looking to analyze datasets of any size, and for administrators who want to set up and run Hadoop clusters.&lt;/p&gt;&lt;p&gt;Using Hadoop 2 exclusively, author Tom White presents new chapters on YARN and several Hadoop-related projects such as Parquet, Flume, Crunch, and Spark. You'll learn about recent changes to Hadoop, and explore new case studies on Hadoop's role in healthcare systems and genomics data processing.&lt;/p&gt;&lt;li&gt;Learn fundamental components such as MapReduce, HDFS, and YARN&lt;/li&gt;&lt;li&gt;Explore MapReduce in depth, including steps for developing applications with it&lt;/li&gt;&lt;li&gt;Set up and maintain a Hadoop cluster running HDFS and MapReduce on YARN&lt;/li&gt;&lt;li&gt;Learn two data formats: Avro for data serialization and Parquet for nested data&lt;/li&gt;&lt;li&gt;Use data...</dc:description>
+        <dc:publisher>O'Reilly Media</dc:publisher>
+        <dc:language>zh</dc:language>
+        <meta name="calibre:author_link_map" content="{}"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="封面" href="cover.jpg"/>
+    </guide>
+</package>
