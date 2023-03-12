@@ -21,3 +21,9 @@ set mapred.max.split.size.per.rack = 128000000;
 set hive.merge.mapfiles=true;
 set hive.merge.mapredfiles=true;
 set hive.merge.size.per.task=128000000;
+
+
+
+
+SET HDC_DBP_LAST_WEEK = concat(year(date_add(${currentDate}, -1)), '0', weekofyear(date_add(${currentDate}, -1)));
+-- select ${hiveconf:HDC_DBP_LAST_WEEK}
