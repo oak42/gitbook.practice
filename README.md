@@ -1,4 +1,4 @@
-https://gitee.com/gsls200808/JrebelLicenseServerforJava.git
+nohup flink run -m yarn-cluster -p 6   -ytm 2g  -yqu QEC -ynm LatestViewProduct -c com.hoperun.submithonor.LatestViewProduct /srv/BigData/data1/bigdata_flink/dap/vmall_dap_cs-1.0-SNAPSHOT.jar 20220320000000000 > /srv/BigData/data1/bigdata_flink/dap/log/LatestViewProduct.log 2>&1 &
 
 
 
