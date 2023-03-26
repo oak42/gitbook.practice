@@ -30,6 +30,9 @@ SET HDC_DBP_LAST_WEEK = concat(year(date_add(${currentDate}, -1)), '0', weekofye
 
 
 fscapture
-
 name：bluman
 serial/序列号/注册码：VPISCJULXUFGDDXYAUYF
+
+
+https://stackoverflow.com/questions/60742617/why-is-enableoauth2sso-deprecated
+https://docs.spring.io/spring-security/reference/servlet/authentication/session-management.html
