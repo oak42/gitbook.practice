@@ -29,10 +29,64 @@ SET HDC_DBP_LAST_WEEK = concat(year(date_add(${currentDate}, -1)), '0', weekofye
 -- select ${hiveconf:HDC_DBP_LAST_WEEK}
 
 
-fscapture
-name：bluman
-serial/序列号/注册码：VPISCJULXUFGDDXYAUYF
-
 
 https://stackoverflow.com/questions/60742617/why-is-enableoauth2sso-deprecated
 https://docs.spring.io/spring-security/reference/servlet/authentication/session-management.html
+
+
+
+
+set flink.partition-discovery.interval-millis=180000;
+
+Create function BehaviorContentUDTF as 'com.flink.udf.JsonParseFuntion';
+
+CREATE TABLE hdc_kafka_behavior_vmall_accesscloud_behavior_id (
+id	VARCHAR,
+ac	VARCHAR,
+createTime	VARCHAR,
+ptd	VARCHAR,
+contents	VARCHAR
+) WITH ('topic' = 'vmall_accesscloud_behavior_id',
+'properties.bootstrap.servers' = '10.68.193.53:21005,10.68.192.126:21005,10.68.195.95:21005,10.68.192.177:21005,10.68.192.80:21005',
+'properties.group.id' = 'fc395ed65e304caf8c69b349d21ef2ed1_vmall_accesscloud_behavior_id',
+'connector' = 'kafka',
+'format' = 'json',
+'json.ignore-parse-errors' = 'true',
+'json.fail-on-missing-field' = 'false',
+'scan.startup.mode' = 'earliest-offset');
+
+
+
+create view hdc_kafka_behavior_vmall_accesscloud_behavior_id_view as
+select
+  cast(id as BIGINT) id,
+  T.propCode propCode,
+  T.propValue propValue,
+  T.createTime createTime,
+  ac,
+  CAST(T.ptd AS bigint) ptd,
+  CAST(SUBSTRING(T.pth, 9, 2) AS bigint) as pth
+from
+  hdc_kafka_behavior_vmall_accesscloud_behavior_id
+  LEFT JOIN LATERAL TABLE(BehaviorContentUDTF(contents)) as T(ptd, createTime, propValue, propCode, pth) ON TRUE
+where
+  propCode is not null
+  and (ac not in ('CN', 'CNQX') and ac is not null)
+  and T.createTime>='2022-03-22 00:00:00';
+
+
+
+CREATE CATALOG hdc_hive WITH (
+	 'type' = 'hive',
+	 'default-database' = 'hdc_cs',
+	 'hive-conf-dir' = '/data01/BigData/data1/FusionInsight/client/Hive/HCatalog/conf'
+);
+
+
+
+
+USE CATALOG hdc_hive;
+set table.sql-dialect=hive; 
+
+
+
