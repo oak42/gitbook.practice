@@ -1,3 +1,6 @@
+javascript:document.getElementById("username").value="cloud";document.getElementsByName("password")[0].value="Gvq-THU-wDU-9hK";document.querySelector(".btn.btn-primary").click();
+
+
 https://github.com/candrews/log4jdbc-spring-boot-starter
 sql statement log
 
