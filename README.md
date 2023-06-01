@@ -1,8 +1,3 @@
-env.java.opts
-https://www.cnblogs.com/slankka/p/16131576.html
-
-containerized.taskmanager.env
-https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/deployment/config/
 
 
 javascript:document.getElementById("username").value="cloud";document.getElementsByName("password")[0].value="Gvq-THU-wDU-9hK";document.querySelector(".btn.btn-primary").click();
