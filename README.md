@@ -1,6 +1,100 @@
+SET search_path = dwdhdc;
+CREATE  TABLE dwd_hdc_user_behavior_d_f (
+	platform text,
+	action_id bigint,
+	action_code character varying,
+	action_type character varying,
+	action_name character varying,
+	ttid text,
+	user_id character varying,
+	is_first_type character varying(20),
+	action_occur_time timestamp without time zone,
+	create_time timestamp without time zone,
+	website character varying,
+	url text,
+	page_name character varying(200),
+	refer_url text,
+	cpsid character varying,
+	wi character varying(128),
+	direct character varying(20),
+	app_device_type character varying(160),
+	brief_name character varying(160),
+	app_device_id character varying(500),
+	app_device_version character varying(32),
+	app_dm character varying(100),
+	app_ouv character varying(100),
+	app_osv character varying(100),
+	app_sr character varying(100),
+	app_os character varying(500),
+	app_source character varying(32),
+	page_title character varying,
+	url_mark bigint,
+	cps_source_name character varying,
+	channel_name character varying,
+	session_id text,
+	page_duration bigint,
+	url_login character varying,
+	url_exit character varying,
+	session_start_time timestamp without time zone,
+	session_end_time timestamp without time zone,
+	session_duration bigint,
+	pt_w bigint,
+	pt_m bigint,
+	pt_h bigint,
+	be_code character varying(500),
+	create_by character varying(20),
+	latest_modify_by character varying(20),
+	pt_d bigint,
+	app_device_type_new character varying,
+	series_name character varying(200),
+	app_path character varying,
+	province character varying(50),
+	city character varying(50),
+	split_url character varying(4096)
+)
+WITH (orientation=column, compression=middle)
+DISTRIBUTE BY HASH(action_id)
+TO GROUP group_version1
+PARTITION BY RANGE (pt_d)
+(
+	 PARTITION p20230612 VALUES LESS THAN (20230612::bigint) TABLESPACE pg_default,
+	 PARTITION p20230613 VALUES LESS THAN (20230613::bigint) TABLESPACE pg_default,
+	 PARTITION p20230614 VALUES LESS THAN (20230614::bigint) TABLESPACE pg_default,
+	 PARTITION p20230615 VALUES LESS THAN (20230615::bigint) TABLESPACE pg_default,
+	 PARTITION p20230616 VALUES LESS THAN (20230616::bigint) TABLESPACE pg_default
+)
+ENABLE ROW MOVEMENT;
 
 
-javascript:document.getElementById("username").value="cloud";document.getElementsByName("password")[0].value="Gvq-THU-wDU-9hK";document.querySelector(".btn.btn-primary").click();
+SET search_path = dwdhdc;
+CREATE  TABLE dwd_hdc_user_behavior_content_d_f (
+	be_code character varying,
+	behavior_id character varying,
+	prop_code character varying,
+	prop_value character varying,
+	create_time character varying,
+	pt_m bigint,
+	pt_w bigint,
+	pt_h bigint,
+	create_by character varying,
+	latest_modify_by character varying,
+	pt_d bigint
+)
+WITH (orientation=column, compression=middle)
+DISTRIBUTE BY HASH(behavior_id)
+TO GROUP group_version1
+PARTITION BY RANGE (pt_d)
+(
+	 PARTITION p20230610 VALUES LESS THAN (20230610::bigint) TABLESPACE pg_default,
+	 PARTITION p20230611 VALUES LESS THAN (20230611::bigint) TABLESPACE pg_default,
+	 PARTITION p20230612 VALUES LESS THAN (20230612::bigint) TABLESPACE pg_default,
+	 PARTITION p20230613 VALUES LESS THAN (20230613::bigint) TABLESPACE pg_default,
+	 PARTITION p20230614 VALUES LESS THAN (20230614::bigint) TABLESPACE pg_default,
+	 PARTITION p20230615 VALUES LESS THAN (20230615::bigint) TABLESPACE pg_default,
+	 PARTITION p20230616 VALUES LESS THAN (20230616::bigint) TABLESPACE pg_default
+)
+ENABLE ROW MOVEMENT;
+
 
 
 https://github.com/candrews/log4jdbc-spring-boot-starter
