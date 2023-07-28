@@ -1,3 +1,8 @@
+https://stackoverflow.com/questions/63500197/how-could-flink-pass-environment-variable-to-job-or-cluster
+containerized.taskmanager.env.
+
+
+
 SET search_path = dwdhdc;
 CREATE  TABLE dwd_hdc_user_behavior_d_f (
 	platform text,
