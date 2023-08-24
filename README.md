@@ -1,3 +1,9 @@
+https://stackoverflow.com/questions/72084329/wildcard-query-elasticsearch-doesnt-work-with-multi-words-values
+Why it is not working on text type field ?
+Because wildcard query is the term level query and it don't apply any analyzer at query time. It will consider your entire query as one pattern. You are matching query on text type field which used standard analyzer at indexing time and token your text to multiple terms and index hence it is working for one term and not multiple term.
+
+
+
 https://stackoverflow.com/questions/63500197/how-could-flink-pass-environment-variable-to-job-or-cluster
 containerized.taskmanager.env.
 
